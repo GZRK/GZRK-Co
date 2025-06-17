@@ -12,7 +12,12 @@ header {
   padding: 2em;
 }
 
-/* Ensure all header elements are gold */
+/* Gold text for all headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #AF8751;
+}
+
+/* Gold text for all header elements */
 header h1,
 header p,
 header h2,
@@ -58,11 +63,10 @@ section p {
   line-height: 1.6;
 }
 
-/* Spacing and color for service headings */
+/* Extra spacing for service headings */
 .spaced-section {
   margin-top: 3em;
   margin-bottom: 0.5em;
-  color: #000000; /* Headings: black */
 }
 
 /* Gold paragraphs under services */
@@ -76,7 +80,6 @@ section p {
 }
 .feature h3 {
   margin-bottom: 0.3em;
-  color: #AF8751;
 }
 .feature p {
   margin: 0;
@@ -111,7 +114,6 @@ section p {
     padding: 0.6em 1.2em;
   }
 }
-
 
 
 
