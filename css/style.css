@@ -1,24 +1,23 @@
-
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 0 1em;
   background: #fff;
   color: #333;
 }
+
 header {
   background: #AF8751;
   color: white;
   text-align: center;
   padding: 2em;
 }
-section {
-  padding: 2em;
-}
+
 section {
   max-width: 800px;
   margin: 0 auto;
   padding: 2em;
+  box-sizing: border-box;
 }
 
 footer {
@@ -27,6 +26,7 @@ footer {
   text-align: center;
   padding: 1em;
 }
+
 a.button {
   background: white;
   color: #AF8751;
@@ -34,7 +34,29 @@ a.button {
   text-decoration: none;
   border-radius: 5px;
 }
-body {
-  padding: 0 1em;
-}
 
+/* Mobile Responsive Styles */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 1.5em 1em;
+  }
+
+  section {
+    padding: 1.5em 1em;
+  }
+
+  footer {
+    padding: 1em 0.5em;
+    font-size: 14px;
+  }
+
+  a.button {
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.6em 1.2em;
+  }
+}
