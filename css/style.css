@@ -8,9 +8,23 @@ body {
 
 header {
   background: #000000; /* Black background */
-  color: #AF8751;       /* Gold text */
+  color: #AF8751;      /* Gold text */
   text-align: center;
   padding: 2em;
+}
+
+/* Ensure all header elements are gold */
+header h1,
+header p,
+header h2,
+header span {
+  color: #AF8751;
+}
+
+/* Make the logo in the header stand out more */
+header img {
+  height: 140px; /* Adjust as needed */
+  margin-bottom: 1em;
 }
 
 section {
@@ -28,7 +42,7 @@ footer {
 }
 
 a.button {
-  background: #AF8751;   /* Gold button */
+  background: #AF8751;   /* Gold background */
   color: #000000;        /* Black text */
   padding: 0.5em 1em;
   text-decoration: none;
@@ -91,5 +105,6 @@ section p {
     padding: 0.6em 1.2em;
   }
 }
+
 
 
