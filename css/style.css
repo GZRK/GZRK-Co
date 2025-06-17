@@ -35,6 +35,19 @@ a.button {
   border-radius: 5px;
 }
 
+/* Spacing for paragraph text */
+section p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+/* Extra space above each service section heading */
+.spaced-section {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  color: #AF8751;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 600px) {
   body {
