@@ -8,7 +8,6 @@ body {
 
 header {
   background: #000000; /* Black background */
-  color: #AF8751;      /* Gold text */
   text-align: center;
   padding: 2em;
 }
@@ -18,12 +17,15 @@ header h1,
 header p,
 header h2,
 header span {
-  color: #AF8751;
+  color: #AF8751 !important;
 }
 
-/* Make the logo in the header stand out more */
+/* Responsive logo styling */
 header img {
-  height: 140px; /* Adjust as needed */
+  height: auto;
+  max-height: 140px;
+  width: auto;
+  max-width: 100%;
   margin-bottom: 1em;
 }
 
