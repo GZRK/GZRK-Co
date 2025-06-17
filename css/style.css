@@ -35,16 +35,21 @@ a.button {
   border-radius: 5px;
 }
 
-/* Spacing for paragraph text */
+/* Paragraph spacing and gold color for service section */
 section p {
   margin-bottom: 1em;
   line-height: 1.6;
 }
 
-/* Extra space above each service section heading */
+/* Spacing and color for service headings */
 .spaced-section {
   margin-top: 3em;
   margin-bottom: 0.5em;
+  color: #000000; /* Headings: black */
+}
+
+/* Gold paragraphs under services */
+.services-section p {
   color: #AF8751;
 }
 
@@ -73,3 +78,4 @@ section p {
     padding: 0.6em 1.2em;
   }
 }
+
