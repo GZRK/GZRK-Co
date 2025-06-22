@@ -39,10 +39,42 @@ section {
 }
 
 footer {
-  background: #222;
-  color: white;
+  background: #000;
+  color: #AF8751;
+  padding: 2em 1em;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  padding: 1em;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.footer-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 80px;
+  max-width: 100%;
+}
+
+footer a {
+  color: #AF8751;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 a.button {
@@ -110,7 +142,6 @@ form button {
   cursor: pointer;
 }
 
-/* Thank-you message */
 #thank-you {
   display: none;
   margin-top: 1em;
@@ -150,13 +181,20 @@ form button {
   }
 
   footer {
-    padding: 1em 0.5em;
-    font-size: 14px;
+    padding: 1.5em 1em;
   }
 
-  a.button {
-    display: inline-block;
-    font-size: 1em;
-    padding: 0.6em 1.2em;
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+
+  footer a {
+    display: block;
+    margin: 0.5em 0;
   }
 }
