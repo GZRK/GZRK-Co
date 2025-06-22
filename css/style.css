@@ -8,17 +8,18 @@ body {
   color: #333;
 }
 
-/* Headings stay gold */
-h1, h2, h3,
-section h1, section h2, section h3,
-.feature h3, .spaced-section {
-  color: #AF8751 !important;
-}
-
 header {
   background: #000000;
+  color: #AF8751;
   text-align: center;
   padding: 2em;
+}
+
+header h1,
+header p,
+header h2,
+header span {
+  color: #AF8751;
 }
 
 header img {
@@ -30,15 +31,15 @@ header img {
   margin-right: auto;
 }
 
-header h1 {
-  font-size: 1.8em;
-}
-
 section {
   max-width: 800px;
   margin: 0 auto;
   padding: 2em;
   box-sizing: border-box;
+}
+
+section h2, section h3 {
+  color: #AF8751;
 }
 
 section p {
@@ -47,7 +48,12 @@ section p {
   color: #333;
 }
 
-/* Keep text in services section dark */
+.spaced-section {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  color: #AF8751;
+}
+
 .services-section p {
   color: #333;
 }
@@ -61,16 +67,20 @@ a.button {
   font-weight: bold;
 }
 
-/* Why Choose Us feature blocks */
+/* Feature blocks (Why Choose Us) */
 .feature {
   margin-bottom: 2em;
+}
+.feature h3 {
+  margin-bottom: 0.3em;
+  color: #AF8751;
 }
 .feature p {
   margin: 0;
   color: #333;
 }
 
-/* Contact form */
+/* Contact form styles */
 form {
   margin-top: 2em;
 }
@@ -99,7 +109,7 @@ form button {
   cursor: pointer;
 }
 
-/* Thank-you animation */
+/* Thank-you message */
 #thank-you {
   display: none;
   margin-top: 1em;
@@ -113,71 +123,37 @@ form button {
   to { opacity: 1; }
 }
 
-/* Footer styles */
+/* Footer */
 footer {
-  background: #000;
-  color: #AF8751;
+  background: #222;
+  color: white;
+  text-align: center;
   padding: 2em 1em;
-}
-
-.footer-content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-left,
-.footer-right {
-  flex: 1;
-  text-align: center;
-  margin: 0.5em 0;
+  gap: 1em;
 }
 
 .footer-logo {
-  flex: 1;
-  text-align: center;
-}
-
-.footer-logo img {
   height: 80px;
   max-width: 100%;
 }
 
-footer a {
-  color: #AF8751;
-  text-decoration: none;
-  font-weight: bold;
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
 }
 
-/* Icon links in footer */
-.footer-icon {
-  display: inline-block;
-  padding: 0.5em;
-  transition: transform 0.2s ease;
-  position: relative;
+.footer-icon svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
 }
 
-.footer-icon:hover {
-  transform: scale(1.2);
-}
-
-/* Tooltip on hover for phone */
-.footer-icon[aria-label]:hover::after {
-  content: attr(aria-label);
-  position: absolute;
-  bottom: -1.8em;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  color: #AF8751;
-  padding: 0.3em 0.6em;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 0.8em;
+.footer-icon:hover svg {
+  transform: scale(1.1);
 }
 
 /* MOBILE STYLES */
@@ -187,7 +163,7 @@ footer a {
   }
 
   header {
-    padding: 1.5em 1em 2.5em;
+    padding: 1.5em 1em 2em;
   }
 
   header h1 {
@@ -197,7 +173,6 @@ footer a {
   header img {
     height: 100px;
     max-width: 90%;
-    display: block;
     margin: 0 auto 1em;
   }
 
@@ -206,12 +181,12 @@ footer a {
   }
 
   footer {
-    padding: 1em 0.5em;
-    font-size: 14px;
+    padding: 1.5em 1em;
+    flex-direction: column;
   }
 
-  .footer-content {
-    flex-direction: column;
+  .footer-icons {
+    gap: 1.5em;
   }
 
   a.button {
