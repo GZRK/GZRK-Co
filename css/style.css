@@ -2,20 +2,19 @@ body {
   font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0 1em;
-  background: #F4EFEA url("../images/Background Pint Coloured.png") center center no-repeat;
-  background-size: contain;
+  background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   color: #333;
 }
 
 header {
-  background: #000000; /* Black background */
-  color: #AF8751;      /* Gold text */
+  background: #000000;
+  color: #AF8751;
   text-align: center;
   padding: 2em;
 }
 
-/* Ensure all header elements are gold */
 header h1,
 header p,
 header h2,
@@ -23,7 +22,6 @@ header span {
   color: #AF8751;
 }
 
-/* Make the logo in the header stand out more */
 header img {
   height: 140px;
   margin-bottom: 1em;
