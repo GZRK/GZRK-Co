@@ -3,23 +3,22 @@ body {
   margin: 0;
   padding: 0 1em;
   background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   color: #333;
 }
 
-header {
-  background: #000000;
+/* Headings in gold */
+h1, h2, h3,
+.spaced-section,
+.feature h3 {
   color: #AF8751;
-  text-align: center;
-  padding: 2em;
 }
 
-header h1,
-header p,
-header h2,
-header span {
-  color: #AF8751;
+header {
+  background: #000000;
+  text-align: center;
+  padding: 2em;
 }
 
 header img {
@@ -41,19 +40,10 @@ section {
 section p {
   margin-bottom: 1em;
   line-height: 1.6;
+  color: #333;
 }
 
-.spaced-section {
-  margin-top: 3em;
-  margin-bottom: 0.5em;
-  color: #AF8751;
-}
-
-/* Specific style fix: headings gold, paragraphs black */
-.services-section h3 {
-  color: #AF8751;
-}
-
+/* Fix paragraph color under services */
 .services-section p {
   color: #333;
 }
@@ -71,12 +61,6 @@ a.button {
 .feature {
   margin-bottom: 2em;
 }
-
-.feature h3 {
-  margin-bottom: 0.3em;
-  color: #AF8751;
-}
-
 .feature p {
   margin: 0;
   color: #333;
@@ -86,13 +70,11 @@ a.button {
 form {
   margin-top: 2em;
 }
-
 form label {
   display: block;
   margin-bottom: 0.5em;
   color: #AF8751;
 }
-
 form input,
 form textarea,
 form select {
@@ -103,7 +85,6 @@ form select {
   border-radius: 4px;
   font-family: Helvetica, sans-serif;
 }
-
 form button {
   background-color: #AF8751;
   color: black;
