@@ -6,6 +6,23 @@
   <title>GZRK Co</title>
   <link rel="icon" href="icons/browser.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Fade-in animation for thank-you */
+    #thank-you {
+      display: none;
+      color: #AF8751;
+      font-weight: bold;
+      text-align: center;
+      padding: 2em;
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    #thank-you.show {
+      display: block;
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -86,7 +103,7 @@
   <section>
     <h2>Contact Us</h2>
 
-    <div id="thank-you" style="display: none; color: #AF8751; font-weight: bold;">
+    <div id="thank-you">
       Thank you! Your message has been sent. We’ll be in touch soon.
     </div>
 
@@ -96,6 +113,17 @@
 
       <label for="email">Email:</label><br>
       <input type="email" name="email" required><br><br>
+
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" name="phone"><br><br>
+
+      <label for="event">Event Type:</label><br>
+      <select name="event">
+        <option value="wedding">Wedding</option>
+        <option value="corporate">Corporate Event</option>
+        <option value="festival">Festival</option>
+        <option value="other">Other</option>
+      </select><br><br>
 
       <label for="message">Message:</label><br>
       <textarea name="message" rows="5" required></textarea><br><br>
@@ -124,7 +152,7 @@
       }).then(response => {
         if (response.ok) {
           form.style.display = 'none';
-          thankYou.style.display = 'block';
+          thankYou.classList.add('show');
         } else {
           alert('Oops! There was a problem. Please try again later.');
         }
@@ -132,6 +160,9 @@
         alert('Something went wrong. Please try again later.');
       });
     });
+
+    // Optional redirect after success:
+    // window.location.href = "thank-you.html";
   </script>
 </body>
 </html>
