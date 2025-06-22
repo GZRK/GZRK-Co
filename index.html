@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GZRK Co</title>
-  <link rel="icon" href="icons/browser.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Fade-in animation for thank-you */
-    #thank-you {
-      display: none;
-      color: #AF8751;
-      font-weight: bold;
-      text-align: center;
-      padding: 2em;
-      opacity: 0;
-      transition: opacity 1s ease-in;
-    }
-
-    #thank-you.show {
-      display: block;
-      opacity: 1;
-    }
-  </style>
+  <link rel="icon" href="icons/favicon-32.png" type="image/png" />
+  <link rel="icon" href="icons/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <img src="images/Color logo - no background.png" alt="GZRK Logo">
+    <img src="images/Color logo - no background.png" alt="GZRK Logo" />
     <h1>Premier Event Bar Hire Across the UK</h1>
     <a href="mailto:GZRK.Co@gmail.com" class="button">Book Your Event</a>
   </header>
@@ -34,8 +18,8 @@
   <section>
     <h2>About GZRK Co</h2>
     <p>GZRK Co is a premier event bar hire company that specialises in providing exceptional bar services for both large and small festivals,
-      as well as private events across the UK. With a foundation in South Wales, our company is dedicated to elevating the beverage experience at any event,
-      ensuring that guests enjoy top-quality drinks and impeccable service.</p>
+    as well as private events across the UK. With a foundation in South Wales, our company is dedicated to elevating the beverage experience at any event,
+    ensuring that guests enjoy top-quality drinks and impeccable service.</p>
   </section>
 
   <section>
@@ -102,34 +86,26 @@
 
   <section>
     <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/mjkrokda" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
 
-    <div id="thank-you">
-      Thank you! Your message has been sent. We’ll be in touch soon.
-    </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required />
 
-    <form id="contact-form" action="https://formspree.io/f/mjkrokda" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" name="name" required><br><br>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
 
-      <label for="email">Email:</label><br>
-      <input type="email" name="email" required><br><br>
+      <label for="event">Event Type</label>
+      <input type="text" id="event" name="event" />
 
-      <label for="phone">Phone Number:</label><br>
-      <input type="tel" name="phone"><br><br>
-
-      <label for="event">Event Type:</label><br>
-      <select name="event">
-        <option value="wedding">Wedding</option>
-        <option value="corporate">Corporate Event</option>
-        <option value="festival">Festival</option>
-        <option value="other">Other</option>
-      </select><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea name="message" rows="5" required></textarea><br><br>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
       <button type="submit" class="button">Send Message</button>
     </form>
+
+    <p id="thank-you" class="fade-in" style="display: none;">Thank you for getting in touch! We’ll respond shortly.</p>
   </section>
 
   <footer>
@@ -137,32 +113,27 @@
   </footer>
 
   <script>
-    const form = document.getElementById('contact-form');
-    const thankYou = document.getElementById('thank-you');
-
-    form.addEventListener('submit', function(e) {
+    // Show thank-you message after form submit
+    const form = document.querySelector("form");
+    const thankYou = document.getElementById("thank-you");
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-
-      const data = new FormData(form);
-
       fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          form.style.display = 'none';
-          thankYou.classList.add('show');
-        } else {
-          alert('Oops! There was a problem. Please try again later.');
-        }
-      }).catch(error => {
-        alert('Something went wrong. Please try again later.');
-      });
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            thankYou.style.display = "block";
+            thankYou.classList.add("visible");
+          }
+        })
+        .catch(error => {
+          alert("There was a problem submitting your form.");
+        });
     });
-
-    // Optional redirect after success:
-    // window.location.href = "thank-you.html";
   </script>
 </body>
 </html>
