@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0 1em;
   background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
-  background-size: cover;
+  background-size: 1200px auto;
   background-attachment: fixed;
   color: #333;
 }
