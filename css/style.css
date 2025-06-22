@@ -65,10 +65,26 @@ footer {
   text-decoration: none;
   transition: transform 0.2s ease;
   display: inline-block;
+  position: relative;
 }
 
 .footer-icon:hover {
   transform: scale(1.2);
+}
+
+.footer-icon[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #AF8751;
+  color: #000;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 a.button {
