@@ -93,11 +93,12 @@ h1 {
   color: #000;
 }
 
-/* Button styles */
+/* Button styles - DESKTOP */
 .button, button {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   color: #000;
-  padding: 0.6em 1.5em;
+  padding: 1em 6em;
+  min-width: 220px;
   border: none;
   border-radius: 6px;
   text-decoration: none;
@@ -253,6 +254,7 @@ footer {
   }
   .button, button {
     font-size: 1em;
-    padding: 1.0em 6em;
+    padding: 0.7em 2em; /* Shorter and less wide on mobile */
+    min-width: 140px;
   }
 }
