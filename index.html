@@ -84,32 +84,36 @@
     <p>Event photos coming soon...</p>
   </section>
 
-  <section>
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mjkrokda" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
+ <section>
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/mjkrokda" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required />
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required />
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required />
 
-      <label for="event-type">Event Type:</label>
-      <select name="event-type" id="event-type" required>
-        <option value="">Please select</option>
-        <option value="Festival">Festival</option>
-        <option value="Wedding">Wedding</option>
-        <option value="Corporate Event">Corporate Event</option>
-        <option value="Private Party">Private Party</option>
-        <option value="Other">Other</option>
-      </select>
+    <label for="phone">Phone:</label>
+    <input type="tel" name="phone" id="phone" />
 
-      <label for="message">Message:</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
+    <label for="event-type">Event Type:</label>
+    <select name="event-type" id="event-type" required>
+      <option value="">Please select</option>
+      <option value="Festival">Festival</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Corporate Event">Corporate Event</option>
+      <option value="Private Party">Private Party</option>
+      <option value="Other">Other</option>
+    </select>
 
-      <button type="submit">Send</button>
-      <div id="thank-you">Thank you! We'll be in touch shortly.</div>
-    </form>
-  </section>
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+    <div id="thank-you">Thank you! We'll be in touch shortly.</div>
+  </form>
+</section>
+
 
   <footer>
     <img src="images/Color logo - no background.png" alt="GZRK Logo" class="footer-logo">
