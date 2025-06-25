@@ -1,45 +1,32 @@
+/* 1. Font imports: */
+@import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Keep+Calm&display=swap'); /* Use correct URL for KeepCalm, or host locally if needed */
+
+/* 2. Brand color */
+:root {
+  --gzrk-gold: #b17a50;
+  --gzrk-gold-light: #e5c298;
+  --gzrk-gold-dark: #8B5A2B;
+  --background: #F4EFEA;
+}
+
+/* 3. Body and background */
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
-  background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
+  background: var(--background) url("../images/background-pint-coloured.png") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: #333;
 }
 
+/* 4. Header styles */
 header {
   background: #000000;
-  color: #AF8751;
+  color: var(--gzrk-gold);
   text-align: center;
   padding: 2em 0;
-}
-
-header h1,
-header p,
-header h2,
-header span {
-  color: #AF8751;
-}
-
-/* Metallic Gradient Heading */
-.metallic-text {
-  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* If you want all h1s metallic by default, uncomment this:
-header h1 {
-  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-*/
-
-header h1 {
-  font-size: 1.8em;
+  font-family: 'Renogare', Helvetica, Arial, sans-serif;
 }
 
 header img {
@@ -51,6 +38,22 @@ header img {
   margin-right: auto;
 }
 
+/* 5. Metallic gradient for all h1, h2, h3, h4 */
+h1, h2, h3, h4 {
+  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 6. Slogan style (header h1) */
+header h1 {
+  font-size: 1.8em;
+  font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
+  margin-top: 0.5em;
+}
+
+/* 7. Section and heading spacing */
 section {
   max-width: 800px;
   margin: 0 auto;
@@ -58,33 +61,23 @@ section {
   box-sizing: border-box;
 }
 
-section h2, section h3 {
-  color: #AF8751;
+.spaced-section {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
 }
 
-section p {
+/* 8. Regular paragraph color */
+section p,
+.services-section p,
+.feature p {
   margin-bottom: 1em;
   line-height: 1.6;
   color: #333;
 }
 
-.spaced-section {
-  margin-top: 3em;
-  margin-bottom: 0.5em;
-  color: #AF8751;
-}
-
-.services-section h3 {
-  color: #AF8751;
-}
-
-.services-section p {
-  color: #333;
-}
-
-/* Metallic Gradient Button */
-.metallic-bg {
-  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
+/* 9. Metallic gradient for all buttons */
+.button, button, .metallic-bg {
+  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   color: #000;
   padding: 0.6em 1.5em;
   border: none;
@@ -95,41 +88,22 @@ section p {
   box-shadow: 0 1px 4px rgba(0,0,0,0.13);
   transition: opacity 0.18s;
 }
-.metallic-bg:hover {
+.button:hover, button:hover, .metallic-bg:hover {
   opacity: 0.85;
 }
 
-/* Original button style for reference */
-a.button {
-  background: #AF8751;
-  color: #000000;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Feature blocks (Why Choose Us) */
+/* 10. Features (Why Choose Us) */
 .feature {
   margin-bottom: 2em;
 }
-.feature h3 {
-  margin-bottom: 0.3em;
-  color: #AF8751;
-}
-.feature p {
-  margin: 0;
-  color: #333;
-}
 
-/* Contact form styles */
 form {
   margin-top: 2em;
 }
 form label {
   display: block;
   margin-bottom: 0.5em;
-  color: #AF8751;
+  color: var(--gzrk-gold);
 }
 form input,
 form textarea,
@@ -142,13 +116,7 @@ form select {
   font-family: Helvetica, sans-serif;
 }
 form button {
-  background-color: #AF8751;
-  color: black;
-  padding: 0.75em 1.5em;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
+  font-family: inherit;
 }
 
 /* Thank-you message */
@@ -156,47 +124,40 @@ form button {
   display: none;
   margin-top: 1em;
   text-align: center;
-  color: #AF8751;
+  color: var(--gzrk-gold);
   animation: fadeIn 1s ease-in-out;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Footer */
+/* 11. Footer */
 footer {
   background: #000000;
   text-align: center;
   padding: 2em 0;
 }
-
 .footer-logo {
   height: 80px;
   max-width: 100%;
   display: block;
   margin: 0 auto 1em;
 }
-
 .footer-icons {
   display: flex;
   justify-content: center;
   gap: 2em;
 }
-
 .footer-icon {
   text-decoration: none;
   transition: transform 0.2s ease;
   display: inline-block;
   position: relative;
 }
-
 .footer-icon:hover {
   transform: scale(1.2);
 }
-
-/* Custom gold tooltip */
 .footer-icon[data-tooltip]:hover::after,
 .footer-icon[data-tooltip]:focus::after {
   content: attr(data-tooltip);
@@ -204,7 +165,7 @@ footer {
   bottom: -1.7em;
   left: 50%;
   transform: translateX(-50%);
-  background: #AF8751;
+  background: var(--gzrk-gold);
   color: #000;
   padding: 0.25em 0.8em;
   border-radius: 4px;
@@ -216,44 +177,36 @@ footer {
   pointer-events: none;
 }
 
-/* Responsive Design */
+/* 12. Responsive Design */
 @media (max-width: 600px) {
   body {
     font-size: 16px;
   }
-
   header {
     padding: 1.5em 0 2em;
   }
-
   header h1 {
     font-size: 1.3em;
   }
-
   header img {
     height: 100px;
     max-width: 90%;
     margin: 0 auto 1em;
   }
-
   section {
     padding: 1.5em 1em;
   }
-
   .footer-logo {
     height: 60px;
   }
-
   .footer-icons {
     gap: 1em;
   }
-
   footer {
     padding: 1.5em 0;
     font-size: 14px;
   }
-
-  a.button {
+  a.button, button {
     display: inline-block;
     font-size: 1em;
     padding: 0.6em 1.2em;
