@@ -1,7 +1,6 @@
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
-  /* padding: 0 1em;  <-- removed to allow full-width header/footer backgrounds */
   background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -21,6 +20,23 @@ header h2,
 header span {
   color: #AF8751;
 }
+
+/* Metallic Gradient Heading */
+.metallic-text {
+  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* If you want all h1s metallic by default, uncomment this:
+header h1 {
+  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+*/
 
 header h1 {
   font-size: 1.8em;
@@ -66,6 +82,24 @@ section p {
   color: #333;
 }
 
+/* Metallic Gradient Button */
+.metallic-bg {
+  background: linear-gradient(90deg, #b17a50 0%, #e5c298 30%, #b17a50 70%, #997244 100%);
+  color: #000;
+  padding: 0.6em 1.5em;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.13);
+  transition: opacity 0.18s;
+}
+.metallic-bg:hover {
+  opacity: 0.85;
+}
+
+/* Original button style for reference */
 a.button {
   background: #AF8751;
   color: #000000;
