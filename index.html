@@ -97,7 +97,14 @@
       <input type="tel" name="phone" id="phone" />
 
       <label for="event">Event Type:</label>
-      <input type="text" name="event" id="event" />
+      <select name="event" id="event" required>
+        <option value="">-- Please select --</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Corporate Event">Corporate Event</option>
+        <option value="Private Party">Private Party</option>
+        <option value="Festival">Festival</option>
+        <option value="Other">Other</option>
+      </select>
 
       <label for="message">Message:</label>
       <textarea name="message" id="message" rows="5" required></textarea>
