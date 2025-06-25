@@ -1,7 +1,7 @@
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
-  padding: 0 1em;
+  /* padding: 0 1em;  <-- removed to allow full-width header/footer backgrounds */
   background: #F4EFEA url("../images/background-pint-coloured.png") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -12,7 +12,7 @@ header {
   background: #000000;
   color: #AF8751;
   text-align: center;
-  padding: 2em;
+  padding: 2em 0;
 }
 
 header h1,
@@ -135,7 +135,7 @@ form button {
 footer {
   background: #000000;
   text-align: center;
-  padding: 2em 1em;
+  padding: 2em 0;
 }
 
 .footer-logo {
@@ -189,7 +189,7 @@ footer {
   }
 
   header {
-    padding: 1.5em 1em 2em;
+    padding: 1.5em 0 2em;
   }
 
   header h1 {
@@ -215,7 +215,7 @@ footer {
   }
 
   footer {
-    padding: 1.5em 1em;
+    padding: 1.5em 0;
     font-size: 14px;
   }
 
