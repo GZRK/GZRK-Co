@@ -33,7 +33,7 @@ header {
   top: 1.5em;
   right: 2em;
   display: flex;
-  gap: 0.7em;           /* Smaller gap between links */
+  gap: 0.4em;           /* Smaller gap between links */
   align-items: center;
   z-index: 10;
 }
@@ -44,7 +44,7 @@ header {
   padding: 0.2em 0.6em; /* Less padding for smaller look */
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
-  font-size: 0.97em;    /* Slightly smaller text */
+  font-size: 0.80em;    /* Slightly smaller text */
 }
 .main-nav a:hover {
   background: #AF8751;
