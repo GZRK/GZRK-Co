@@ -1,8 +1,7 @@
-/* Font imports */
+/* Font and color variables */
 @import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /* Fallback for KeepCalm Medium */
+@import url('https://fonts.googleapis.com/css2?family=Keep+Calm&display=swap');
 
-/* Brand color variables */
 :root {
   --gzrk-gold: #b17a50;
   --gzrk-gold-light: #e5c298;
@@ -20,33 +19,23 @@ body {
   color: #333;
 }
 
-/* Header styles */
+/* HEADER & NAVIGATION */
 header {
-  background: #000000;
+  background: #000;
   color: var(--gzrk-gold);
+  position: relative;
+  padding: 2em 0 2.5em 0;
   text-align: center;
-  padding: 2em 0;
-  font-family: 'Renogare', Helvetica, Arial, sans-serif;
 }
 
-header img {
-  height: 140px;
-  margin-bottom: 1em;
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Navigation styling */
 .main-nav {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  position: absolute;
+  top: 1.5em;
+  right: 2em;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
+  gap: 1.5em;
   align-items: center;
+  z-index: 10;
 }
 .main-nav a {
   color: #AF8751;
@@ -61,68 +50,50 @@ header img {
   color: #000;
 }
 
-/* Metallic gradient for all headings */
-h1, h2, h3, h4, header h1 {
+header img {
+  height: 140px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main title (with metallic gradient effect if you want) */
+h1 {
+  font-size: 1.8em;
+  font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
+  margin-top: 0.5em;
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
-/* Slogan style (header h1) font */
-header h1 {
-  font-family: 'Keep Calm', 'Montserrat', Arial, sans-serif;
-  font-size: 1.8em;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-
-/* Section and heading spacing */
-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2em;
-  box-sizing: border-box;
-}
-.spaced-section {
-  margin-top: 3em;
-  margin-bottom: 0.5em;
-}
-
-/* Regular paragraph color */
-section p,
-.services-section p,
-.feature p {
-  margin-bottom: 1em;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Services links styling */
-.services-links {
-  list-style: none;
-  padding: 0;
-  margin: 1.5em 0;
+/* Sub navigation for services */
+.sub-nav {
+  margin: 2em 0 1em 0;
   display: flex;
-  flex-direction: column;
-  gap: 1em;
+  justify-content: center;
+  gap: 2em;
 }
-.services-links a {
-  color: #b17a50;
+.sub-nav a {
+  font-size: 1.25em;
   font-weight: bold;
+  color: #AF8751;
   text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.2s, border-bottom 0.2s;
-  border-bottom: 2px solid transparent;
+  padding: 0.3em 1.5em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  background: rgba(0,0,0,0.05);
 }
-.services-links a:hover {
+.sub-nav a:hover {
+  background: #AF8751;
   color: #000;
-  border-bottom: 2px solid #b17a50;
 }
 
-/* Metallic gradient for all buttons */
-.button, button, .metallic-bg {
+/* Button styles */
+.button, button {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   color: #000;
   padding: 0.6em 1.5em;
@@ -134,8 +105,35 @@ section p,
   box-shadow: 0 1px 4px rgba(0,0,0,0.13);
   transition: opacity 0.18s;
 }
-.button:hover, button:hover, .metallic-bg:hover {
+.button:hover, button:hover {
   opacity: 0.85;
+}
+
+/* Headings metallic */
+h2, h3, h4 {
+  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Sections & content */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.spaced-section {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
+
+section p, .services-section p, .feature p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* Features (Why Choose Us) */
@@ -143,6 +141,7 @@ section p,
   margin-bottom: 2em;
 }
 
+/* Form styles */
 form {
   margin-top: 2em;
 }
@@ -151,9 +150,7 @@ form label {
   margin-bottom: 0.5em;
   color: var(--gzrk-gold);
 }
-form input,
-form textarea,
-form select {
+form input, form textarea, form select {
   width: 100%;
   padding: 0.5em;
   margin-bottom: 1em;
@@ -178,7 +175,7 @@ form button {
   to { opacity: 1; }
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #000000;
   text-align: center;
@@ -204,8 +201,7 @@ footer {
 .footer-icon:hover {
   transform: scale(1.2);
 }
-.footer-icon[data-tooltip]:hover::after,
-.footer-icon[data-tooltip]:focus::after {
+.footer-icon[data-tooltip]:hover::after, .footer-icon[data-tooltip]:focus::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: -1.7em;
@@ -223,24 +219,26 @@ footer {
   pointer-events: none;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .main-nav {
+    position: static;
+    justify-content: center;
+    margin-top: 1em;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .sub-nav {
+    flex-direction: column;
+    gap: 1em;
   }
   header {
-    padding: 1.5em 0 2em;
-  }
-  header h1 {
-    font-size: 1.3em;
+    padding: 1.5em 0 2em 0;
   }
   header img {
     height: 100px;
     max-width: 90%;
     margin: 0 auto 1em;
-  }
-  section {
-    padding: 1.5em 1em;
   }
   .footer-logo {
     height: 60px;
@@ -252,13 +250,8 @@ footer {
     padding: 1.5em 0;
     font-size: 14px;
   }
-  a.button, button {
-    display: inline-block;
+  .button, button {
     font-size: 1em;
     padding: 0.6em 1.2em;
-  }
-  .services-links {
-    font-size: 1em;
-    gap: 0.8em;
   }
 }
