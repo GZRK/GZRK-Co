@@ -1,8 +1,8 @@
-/* 1. Font imports: */
+/* 1. Font imports */
 @import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Keep+Calm&display=swap'); /* Use correct URL for KeepCalm, or host locally if needed */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /* Fallback for KeepCalm Medium */
 
-/* 2. Brand color */
+/* 2. Brand color variables */
 :root {
   --gzrk-gold: #b17a50;
   --gzrk-gold-light: #e5c298;
@@ -38,19 +38,21 @@ header img {
   margin-right: auto;
 }
 
-/* 5. Metallic gradient for all h1, h2, h3, h4 */
-h1, h2, h3, h4 {
+/* 5. Metallic gradient for all h1, h2, h3, h4 including header h1 */
+h1, h2, h3, h4, header h1 {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
 }
 
-/* 6. Slogan style (header h1) */
+/* 6. Slogan style (header h1) font */
 header h1 {
+  font-family: 'Keep Calm', 'Montserrat', Arial, sans-serif;
   font-size: 1.8em;
-  font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
   margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 /* 7. Section and heading spacing */
