@@ -1,129 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GZRK Co</title>
-  <link rel="icon" href="icons/browser.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header>
-    <img src="images/Color logo - no background.png" alt="GZRK Logo">
-    <h1 class="metallic-text">Premier Event Bar Hire Across the UK</h1>
-    <a href="mailto:GZRK.Co@gmail.com" class="button">Book Your Event</a>
-  </header>
+/* 1. Font imports: */
+@import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Keep+Calm&display=swap'); /* Use correct URL for KeepCalm, or host locally if needed */
 
-  <section>
-    <h2>About GZRK Co</h2>
-    <p>GZRK Co is a premier event bar hire company that specialises in providing exceptional bar services for both large and small festivals,
-    as well as private events across the UK. With a foundation in South Wales, our company is dedicated to elevating the beverage experience at any event,
-    ensuring that guests enjoy top-quality drinks and impeccable service.</p>
-  </section>
+/* 2. Brand color */
+:root {
+  --gzrk-gold: #b17a50;
+  --gzrk-gold-light: #e5c298;
+  --gzrk-gold-dark: #8B5A2B;
+  --background: #F4EFEA;
+}
 
-  <section>
-    <h2>Our Mission</h2>
-    <p>At GZRK Co, our mission is to create unforgettable event experiences through exceptional bar service. We are committed to providing a seamless, enjoyable,
-    and unique beverage experience that enhances the overall atmosphere of any event, large or small.</p>
-  </section>
+/* 3. Body and background */
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  background: var(--background) url("../images/background-pint-coloured.png") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+}
 
-  <section class="services-section">
-    <h2>Our Services</h2>
+/* 4. Header styles */
+header {
+  background: #000000;
+  color: var(--gzrk-gold);
+  text-align: center;
+  padding: 2em 0;
+  font-family: 'Renogare', Helvetica, Arial, sans-serif;
+}
 
-    <h3 class="spaced-section">Festival Bar Hire</h3>
-    <p>Expertly managed bar services for large-scale festivals.</p>
-    <p>Fully equipped mobile bars with a wide selection of alcoholic and non-alcoholic beverages.</p>
-    <p>Professional and experienced bartenders skilled in handling high-volume service.</p>
-    <p>Customizable bar setups to match the festival theme and requirements.</p>
-    <p>Efficient logistics and quick setup/breakdown to ensure seamless operations.</p>
+header img {
+  height: 140px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    <h3 class="spaced-section">Private Event Bar Hire</h3>
-    <p>Tailored bar services for weddings, corporate events, parties, and other private functions.</p>
-    <p>Personalized drink menus curated to suit the specific tastes and preferences of event hosts and guests.</p>
-    <p>Intimate and stylish bar setups that enhance the ambiance of smaller venues.</p>
-    <p>Attentive and friendly staff focused on delivering a memorable experience.</p>
+/* 5. Metallic gradient for all h1, h2, h3, h4 */
+h1, h2, h3, h4 {
+  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-    <h3 class="spaced-section">Complete Bar Solutions</h3>
-    <p>Provision of all necessary bar equipment, glassware, and accessories.</p>
-    <p>Comprehensive beverage management including inventory, stock control, and premium sourcing.</p>
-    <p>Licensing and compliance with all legal requirements for serving alcohol at events.</p>
-    <p>On-site coordination to ensure smooth bar operations and guest satisfaction.</p>
-  </section>
+/* 6. Slogan style (header h1) */
+header h1 {
+  font-size: 1.8em;
+  font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
+  margin-top: 0.5em;
+}
 
-  <section>
-    <h2>Why Choose GZRK Co?</h2>
+/* 7. Section and heading spacing */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  box-sizing: border-box;
+}
 
-    <div class="feature">
-      <h3>Professionalism</h3>
-      <p>Our team consists of highly trained bartenders and event specialists who are passionate about delivering top-notch service.</p>
-    </div>
+.spaced-section {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
 
-    <div class="feature">
-      <h3>Flexibility</h3>
-      <p>Whether it’s a bustling festival or an intimate private gathering, GZRK Co adapts to the unique demands of each event, ensuring a personalized touch.</p>
-    </div>
+/* 8. Regular paragraph color */
+section p,
+.services-section p,
+.feature p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+  color: #333;
+}
 
-    <div class="feature">
-      <h3>Quality</h3>
-      <p>We pride ourselves on offering an extensive range of high-quality beverages, including craft beers, fine wines, signature cocktails, and more.</p>
-    </div>
+/* 9. Metallic gradient for all buttons */
+.button, button, .metallic-bg {
+  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  color: #000;
+  padding: 0.6em 1.5em;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.13);
+  transition: opacity 0.18s;
+}
+.button:hover, button:hover, .metallic-bg:hover {
+  opacity: 0.85;
+}
 
-    <div class="feature">
-      <h3>Reliability</h3>
-      <p>From initial consultation to event execution, we maintain open communication and a proactive approach, guaranteeing peace of mind for our clients.</p>
-    </div>
+/* 10. Features (Why Choose Us) */
+.feature {
+  margin-bottom: 2em;
+}
 
-    <div class="feature">
-      <h3>Nationwide Reach</h3>
-      <p>Although based in South Wales, GZRK Co is equipped to serve events across the entire UK, bringing our exceptional bar services to any location.</p>
-    </div>
-  </section>
+form {
+  margin-top: 2em;
+}
+form label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: var(--gzrk-gold);
+}
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Helvetica, sans-serif;
+}
+form button {
+  font-family: inherit;
+}
 
-  <section>
-    <h2>Gallery</h2>
-    <p>Event photos coming soon...</p>
-  </section>
+/* Thank-you message */
+#thank-you {
+  display: none;
+  margin-top: 1em;
+  text-align: center;
+  color: var(--gzrk-gold);
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  <section>
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mjkrokda" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" required />
+/* 11. Footer */
+footer {
+  background: #000000;
+  text-align: center;
+  padding: 2em 0;
+}
+.footer-logo {
+  height: 80px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 1em;
+}
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+.footer-icon {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  position: relative;
+}
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+.footer-icon[data-tooltip]:hover::after,
+.footer-icon[data-tooltip]:focus::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -1.7em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gzrk-gold);
+  color: #000;
+  padding: 0.25em 0.8em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  opacity: 1;
+  pointer-events: none;
+}
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required />
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" name="phone" id="phone" />
-
-      <label for="event">Event Type:</label>
-      <select name="event" id="event" required>
-        <option value="">-- Please select --</option>
-        <option value="Wedding">Wedding</option>
-        <option value="Corporate Event">Corporate Event</option>
-        <option value="Private Party">Private Party</option>
-        <option value="Festival">Festival</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label for="message">Message:</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
-
-      <button type="submit">Send</button>
-      <div id="thank-you">Thank you! We'll be in touch shortly.</div>
-    </form>
-  </section>
-
-  <footer>
-    <img src="images/Color logo - no background.png" alt="GZRK Logo" class="footer-logo">
-    <div class="footer-icons">
-      <a href="mailto:GZRK.Co@gmail.com" class="footer-icon" data-tooltip="Email GZRK.Co@gmail.com">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#AF8751" viewBox="0 0 24 24"><path d="M12 13.15 3.15 6.5h17.7Zm-9 5.35V7.15L12 14l9-6.85v11.35Z"/></svg>
-      </a>
-      <a href="tel:07853354251" class="footer-icon" data-tooltip="Call 07853 354251">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#AF8751" viewBox="0 0 24 24"><path d="M6.6 3.4 9 5.8q.25.25.287.613.038.362-.137.687L7.95 9.25q-.125.25-.113.5.013.25.138.475.575 1.025 1.625 2.075 1.05 1.05 2.075 1.625.225.125.475.138.25.012.5-.113l2.15-1.2q.325-.175.688-.137.362.037.612.287l2.4 2.4q.275.275.275.675t-.275.725l-1.725 1.7q-.45.45-1.075.625-.625.175-1.3.05-2.175-.375-4.512-2.137-2.338-1.763-3.7-4.2-1.05-1.875-1.35-3.487-.3-1.613.05-2.913.15-.65.625-1.125Z"/></svg>
-      </a>
-    </div>
-  </footer>
-</body>
-</html>
+/* 12. Responsive Design */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    padding: 1.5em 0 2em;
+  }
+  header h1 {
+    font-size: 1.3em;
+  }
+  header img {
+    height: 100px;
+    max-width: 90%;
+    margin: 0 auto 1em;
+  }
+  section {
+    padding: 1.5em 1em;
+  }
+  .footer-logo {
+    height: 60px;
+  }
+  .footer-icons {
+    gap: 1em;
+  }
+  footer {
+    padding: 1.5em 0;
+    font-size: 14px;
+  }
+  a.button, button {
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.6em 1.2em;
+  }
+}
