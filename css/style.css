@@ -76,7 +76,7 @@ h1 {
   margin: 2em 0 1em 0;
   display: flex;
   justify-content: center;
-  gap: 2em;
+  gap: 1em;
 }
 .sub-nav a {
   font-size: 1.25em;
