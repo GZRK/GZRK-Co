@@ -1,8 +1,8 @@
-/* 1. Font imports */
+/* Font imports */
 @import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); /* Fallback for KeepCalm Medium */
 
-/* 2. Brand color variables */
+/* Brand color variables */
 :root {
   --gzrk-gold: #b17a50;
   --gzrk-gold-light: #e5c298;
@@ -10,7 +10,7 @@
   --background: #F4EFEA;
 }
 
-/* 3. Body and background */
+/* Body and background */
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   color: #333;
 }
 
-/* 4. Header styles */
+/* Header styles */
 header {
   background: #000000;
   color: var(--gzrk-gold);
@@ -38,7 +38,30 @@ header img {
   margin-right: auto;
 }
 
-/* 5. Metallic gradient for all h1, h2, h3, h4 including header h1 */
+/* Navigation styling */
+.main-nav {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.main-nav a {
+  color: #AF8751;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.main-nav a:hover {
+  background: #AF8751;
+  color: #000;
+}
+
+/* Metallic gradient for all headings */
 h1, h2, h3, h4, header h1 {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   -webkit-background-clip: text;
@@ -47,170 +70,5 @@ h1, h2, h3, h4, header h1 {
   text-fill-color: transparent;
 }
 
-/* 6. Slogan style (header h1) font */
-header h1 {
-  font-family: 'Keep Calm', 'Montserrat', Arial, sans-serif;
-  font-size: 1.8em;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-
-/* 7. Section and heading spacing */
-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2em;
-  box-sizing: border-box;
-}
-
-.spaced-section {
-  margin-top: 3em;
-  margin-bottom: 0.5em;
-}
-
-/* 8. Regular paragraph color */
-section p,
-.services-section p,
-.feature p {
-  margin-bottom: 1em;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* 9. Metallic gradient for all buttons */
-.button, button, .metallic-bg {
-  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
-  color: #000;
-  padding: 0.6em 1.5em;
-  border: none;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.13);
-  transition: opacity 0.18s;
-}
-.button:hover, button:hover, .metallic-bg:hover {
-  opacity: 0.85;
-}
-
-/* 10. Features (Why Choose Us) */
-.feature {
-  margin-bottom: 2em;
-}
-
-form {
-  margin-top: 2em;
-}
-form label {
-  display: block;
-  margin-bottom: 0.5em;
-  color: var(--gzrk-gold);
-}
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: Helvetica, sans-serif;
-}
-form button {
-  font-family: inherit;
-}
-
-/* Thank-you message */
-#thank-you {
-  display: none;
-  margin-top: 1em;
-  text-align: center;
-  color: var(--gzrk-gold);
-  animation: fadeIn 1s ease-in-out;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* 11. Footer */
-footer {
-  background: #000000;
-  text-align: center;
-  padding: 2em 0;
-}
-.footer-logo {
-  height: 80px;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto 1em;
-}
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
-.footer-icon {
-  text-decoration: none;
-  transition: transform 0.2s ease;
-  display: inline-block;
-  position: relative;
-}
-.footer-icon:hover {
-  transform: scale(1.2);
-}
-.footer-icon[data-tooltip]:hover::after,
-.footer-icon[data-tooltip]:focus::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -1.7em;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gzrk-gold);
-  color: #000;
-  padding: 0.25em 0.8em;
-  border-radius: 4px;
-  font-size: 0.85em;
-  white-space: nowrap;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  opacity: 1;
-  pointer-events: none;
-}
-
-/* 12. Responsive Design */
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-  header {
-    padding: 1.5em 0 2em;
-  }
-  header h1 {
-    font-size: 1.3em;
-  }
-  header img {
-    height: 100px;
-    max-width: 90%;
-    margin: 0 auto 1em;
-  }
-  section {
-    padding: 1.5em 1em;
-  }
-  .footer-logo {
-    height: 60px;
-  }
-  .footer-icons {
-    gap: 1em;
-  }
-  footer {
-    padding: 1.5em 0;
-    font-size: 14px;
-  }
-  a.button, button {
-    display: inline-block;
-    font-size: 1em;
-    padding: 0.6em 1.2em;
-  }
-}
+/* Slogan style (header h1) font */
+header
