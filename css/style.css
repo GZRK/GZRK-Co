@@ -29,21 +29,21 @@ header {
   overflow: visible;
 }
 
-/* Hamburger icon - hidden by default */
+/* Hamburger icon (hidden desktop) */
 .hamburger {
   display: none;
 }
-
-/* Hamburger bars */
 .hamburger .bar {
   display: block;
   width: 28px;
   height: 4px;
-  margin: 5px 0;
+  margin: 4px 0;
   background: #b17a50;
   border-radius: 3px;
   opacity: 1;
   transition: background 0.2s;
+  box-shadow: none;
+  border: none;
 }
 
 /* Desktop navigation */
@@ -70,9 +70,9 @@ header {
   color: #000;
 }
 
-/* LOGO SIZING */
+/* Logo sizing */
 header img {
-  height: 140px;
+  height: 180px;   /* Desktop size */
   margin-bottom: 0.5em;
   max-width: 100%;
   display: block;
@@ -80,7 +80,7 @@ header img {
   margin-right: auto;
 }
 
-/* Main title (with metallic gradient effect) */
+/* Main title (metallic) */
 h1 {
   font-size: 1.8em;
   font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
@@ -242,7 +242,6 @@ footer {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
-  /* Hamburger appears and is fixed top-right, no shadow, no light box */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -252,21 +251,14 @@ footer {
     border: none;
     cursor: pointer;
     position: fixed;
-    top: 24px;
-    right: 14px;
+    top: 18px;
+    right: 20px;
     z-index: 1002;
     width: 40px;
     height: 40px;
     padding: 0;
-  }
-  /* Hamburger bars, more visible */
-  .hamburger .bar {
-    width: 32px;
-    height: 5px;
-    margin: 6px 0;
-    background: #b17a50;
-    border-radius: 3px;
-    opacity: 1;
+    /* Remove box-shadow for cleaner look */
+    box-shadow: none;
   }
   .main-nav {
     display: none;
@@ -293,9 +285,22 @@ footer {
     text-align: center;
   }
   header img {
-    height: 80px;
+    height: 95px;  /* Bigger logo on mobile */
     max-width: 90%;
     margin: 0 auto 1em;
+  }
+  .sub-nav {
+    flex-direction: column;
+    gap: 0.8em;
+    align-items: center;
+  }
+  .sub-nav a {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15em;
+    padding: 0.5em 0;
+    box-sizing: border-box;
   }
   .button, button {
     font-size: 1em;
