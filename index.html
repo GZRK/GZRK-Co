@@ -9,18 +9,20 @@
 </head>
 <body>
   <header>
-    <nav class="main-nav" id="nav">
+    <!-- Hamburger Button (only visible on mobile) -->
+    <button class="hamburger" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="main-nav">
       <a href="index.html">Home</a>
       <a href="complete-bar-solutions.html">Complete Bar Solutions</a>
       <a href="why-choose-us.html">Why Choose Us</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact-us.html">Contact Us</a>
     </nav>
-    <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
     <img src="images/Color logo - no background.png" alt="GZRK Logo">
     <div class="sub-nav">
       <a href="festival-bar-hire.html">Festival Bars</a>
@@ -35,14 +37,14 @@
   <section>
     <h2>About GZRK Co</h2>
     <p>GZRK Co is a premier event bar hire company that specialises in providing exceptional bar services for both large and small festivals,
-    as well as private events across the UK. With a foundation in South Wales, our company is dedicated to elevating the beverage experience at any event,
-    ensuring that guests enjoy top-quality drinks and impeccable service.</p>
+      as well as private events across the UK. With a foundation in South Wales, our company is dedicated to elevating the beverage experience at any event,
+      ensuring that guests enjoy top-quality drinks and impeccable service.</p>
   </section>
 
   <section>
     <h2>Our Mission</h2>
     <p>At GZRK Co, our mission is to create unforgettable event experiences through exceptional bar service. We are committed to providing a seamless, enjoyable,
-    and unique beverage experience that enhances the overall atmosphere of any event, large or small.</p>
+      and unique beverage experience that enhances the overall atmosphere of any event, large or small.</p>
   </section>
 
   <footer>
@@ -57,17 +59,17 @@
     </div>
   </footer>
 
-  <!-- Hamburger Menu Script -->
+  <!-- Hamburger script at end of body -->
   <script>
     // Hamburger menu toggle
     const burger = document.querySelector('.hamburger');
     const nav = document.querySelector('.main-nav');
-    if(burger && nav) {
+    if (burger && nav) {
       burger.addEventListener('click', function() {
         nav.classList.toggle('open');
         const expanded = nav.classList.contains('open');
         burger.setAttribute('aria-expanded', expanded);
-        // Optional: close menu if clicking a link
+        // Close menu if clicking a link
         nav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             nav.classList.remove('open');
