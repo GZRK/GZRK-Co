@@ -116,7 +116,7 @@ header {
 
 /* LOGO SIZING */
 header img {
-  height: 160px; /* Desktop logo size */
+  height: 200px; /* Desktop logo size */
   margin-bottom: 1em;
   max-width: 100%;
   display: block;
