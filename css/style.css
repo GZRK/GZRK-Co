@@ -1,4 +1,3 @@
-/* 1. Font and color variables */
 @import url('https://fonts.googleapis.com/css2?family=Renogare&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Keep+Calm&display=swap');
 
@@ -9,7 +8,7 @@
   --background: #F4EFEA;
 }
 
-/* 2. Body and background */
+/* Body and background */
 body {
   font-family: Helvetica, sans-serif;
   margin: 0;
@@ -17,37 +16,17 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* 3. HEADER & NAVIGATION */
+/* HEADER & NAVIGATION */
 header {
   background: #000;
   color: var(--gzrk-gold);
   position: relative;
   padding: 2em 0 2.5em 0;
   text-align: center;
-  z-index: 20;
 }
 
-/* Hamburger menu for mobile */
-.hamburger {
-  display: none;
-  position: absolute;
-  top: 1.2em;
-  right: 1.2em;
-  background: transparent;
-  border: none;
-  font-size: 2.2em;
-  color: var(--gzrk-gold);
-  z-index: 100;
-  cursor: pointer;
-  line-height: 1;
-}
-
-/* Main navigation */
 .main-nav {
   position: absolute;
   top: 1.5em;
@@ -56,9 +35,7 @@ header {
   gap: 0.4em;
   align-items: center;
   z-index: 10;
-  transition: max-height 0.25s, opacity 0.25s;
 }
-
 .main-nav a {
   color: #AF8751;
   text-decoration: none;
@@ -66,14 +43,13 @@ header {
   padding: 0.2em 0.6em;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
-  font-size: 0.90em;
+  font-size: 0.80em;
 }
 .main-nav a:hover {
   background: #AF8751;
   color: #000;
 }
 
-/* 4. Logo and heading */
 header img {
   height: 140px;
   margin-bottom: 1em;
@@ -83,6 +59,7 @@ header img {
   margin-right: auto;
 }
 
+/* Main title metallic effect */
 h1 {
   font-size: 1.8em;
   font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
@@ -93,7 +70,7 @@ h1 {
   background-clip: text;
 }
 
-/* 5. Sub-navigation for services */
+/* Sub navigation for services */
 .sub-nav {
   margin: 2em 0 1em 0;
   display: flex;
@@ -101,11 +78,11 @@ h1 {
   gap: 1em;
 }
 .sub-nav a {
-  font-size: 1.18em;
+  font-size: 1.25em;
   font-weight: bold;
   color: #AF8751;
   text-decoration: none;
-  padding: 0.3em 1.4em;
+  padding: 0.3em 1.5em;
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
   background: rgba(0,0,0,0.05);
@@ -119,7 +96,7 @@ h1 {
 .button, button {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   color: #000;
-  padding: 0.8em 4em;
+  padding: 1em 4em;
   border: none;
   border-radius: 6px;
   text-decoration: none;
@@ -128,7 +105,6 @@ h1 {
   box-shadow: 0 1px 4px rgba(0,0,0,0.13);
   transition: opacity 0.18s;
   font-size: 1.1em;
-  margin-top: 0.8em;
 }
 .button:hover, button:hover {
   opacity: 0.85;
@@ -148,7 +124,6 @@ section {
   margin: 0 auto;
   padding: 2em;
   box-sizing: border-box;
-  flex: 1 0 auto;
 }
 
 .spaced-section {
@@ -206,7 +181,6 @@ footer {
   background: #000000;
   text-align: center;
   padding: 2em 0;
-  margin-top: auto;
 }
 .footer-logo {
   height: 80px;
@@ -246,50 +220,54 @@ footer {
   pointer-events: none;
 }
 
-/* 6. Hamburger & Responsive Navigation */
+/* HAMBURGER STYLES */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 1.2em 1.3em 1em auto;
+  position: relative;
+  z-index: 20;
+}
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  background: #b17a50;
+  margin: 5px 0;
+  border-radius: 2px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Responsive design */
 @media (max-width: 900px) {
-  /* Hamburger visible, nav hidden until opened */
-  .hamburger {
-    display: block;
-  }
   .main-nav {
-    position: static;
+    display: none;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    position: absolute;
+    right: 1em;
+    top: 80px;
     background: #000;
-    width: 100%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0 1em;
-    margin: 0;
-    box-sizing: border-box;
-    transition: max-height 0.22s cubic-bezier(.4,0,.2,1), opacity 0.2s;
+    border-radius: 8px;
+    padding: 1em;
+    z-index: 20;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.25);
   }
   .main-nav.open {
-    max-height: 300px;
-    opacity: 1;
-    padding: 1em 1em 0.6em 1em;
+    display: flex;
   }
-  .main-nav a {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 0.25em 0;
-    font-size: 1.08em;
-    padding: 0.5em 0.3em;
-    border-radius: 0;
-    background: none;
-    border-bottom: 1px solid #222;
-  }
-  .main-nav a:last-child {
-    border-bottom: none;
+  .hamburger {
+    display: flex;
   }
   .sub-nav {
     flex-direction: column;
-    gap: 0.7em;
-    margin-top: 1.2em;
+    gap: 1em;
   }
   header {
     padding: 1.5em 0 2em 0;
@@ -311,19 +289,6 @@ footer {
   }
   .button, button {
     font-size: 1em;
-    padding: 0.7em 2.5em;
+    padding: 1em 4em;
   }
-}
-
-/* Stick footer to bottom even with little content */
-html, body {
-  height: 100%;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-footer {
-  margin-top: auto;
 }
