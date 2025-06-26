@@ -328,7 +328,7 @@ footer {
     text-align: center;
   }
   header img {
-    height: 56px;   /* Smaller logo on mobile */
+    height: 80px;   /* Smaller logo on mobile */
     max-width: 90%;
     margin: 0 auto 1em;
   }
