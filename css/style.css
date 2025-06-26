@@ -29,16 +29,17 @@ header {
   overflow: visible;
 }
 
-/* Hamburger icon */
+/* Hamburger icon - hidden by default */
 .hamburger {
   display: none;
 }
 
+/* Hamburger bars */
 .hamburger .bar {
   display: block;
   width: 28px;
   height: 4px;
-  margin: 4px 0;
+  margin: 5px 0;
   background: #b17a50;
   border-radius: 3px;
   opacity: 1;
@@ -69,54 +70,9 @@ header {
   color: #000;
 }
 
-/* Responsive hamburger menu */
-@media (max-width: 900px) {
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    z-index: 1002;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    box-shadow: 0 2px 8px rgba(255,255,255,0.9); /* helps over logo */
-  }
-  .main-nav {
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    left: 0;
-    background: #000;
-    flex-direction: column;
-    padding: 1em 0;
-    gap: 0.8em;
-    width: 100vw;
-    z-index: 1001;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
-  }
-  .main-nav.open {
-    display: flex;
-  }
-  .main-nav a {
-    font-size: 1.1em;
-    padding: 0.6em 0;
-    width: 90vw;
-    margin: 0 auto;
-    text-align: center;
-  }
-}
-
 /* LOGO SIZING */
 header img {
-  height: 180px; /* Desktop logo size */
+  height: 140px;
   margin-bottom: 0.5em;
   max-width: 100%;
   display: block;
@@ -161,7 +117,7 @@ h1 {
 .button, button {
   background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
   color: #000;
-  padding: 0.8em 4em;    /* Wider on desktop */
+  padding: 0.8em 4em;
   border: none;
   border-radius: 6px;
   text-decoration: none;
@@ -286,6 +242,7 @@ footer {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
+  /* Hamburger appears and is fixed top-right, no shadow, no light box */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -295,13 +252,21 @@ footer {
     border: none;
     cursor: pointer;
     position: fixed;
-    top: 18px;
-    right: 20px;
+    top: 24px;
+    right: 14px;
     z-index: 1002;
     width: 40px;
     height: 40px;
     padding: 0;
-    box-shadow: 0 2px 8px rgba(255,255,255,0.9);
+  }
+  /* Hamburger bars, more visible */
+  .hamburger .bar {
+    width: 32px;
+    height: 5px;
+    margin: 6px 0;
+    background: #b17a50;
+    border-radius: 3px;
+    opacity: 1;
   }
   .main-nav {
     display: none;
@@ -328,7 +293,7 @@ footer {
     text-align: center;
   }
   header img {
-    height: 80px;   /* Smaller logo on mobile */
+    height: 56px;
     max-width: 90%;
     margin: 0 auto 1em;
   }
