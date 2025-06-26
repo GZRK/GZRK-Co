@@ -9,6 +9,8 @@
 </head>
 <body>
   <header>
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="complete-bar-solutions.html">Complete Bar Solutions</a>
@@ -40,8 +42,6 @@
     and unique beverage experience that enhances the overall atmosphere of any event, large or small.</p>
   </section>
 
-  <!-- You could add a welcome message, hero photo, or upcoming events promo here if you wish -->
-
   <footer>
     <img src="images/Color logo - no background.png" alt="GZRK Logo" class="footer-logo">
     <div class="footer-icons">
@@ -53,5 +53,25 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    // Hamburger menu toggle for mobile
+    const burger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.main-nav');
+    if(burger && nav) {
+      burger.addEventListener('click', function() {
+        nav.classList.toggle('open');
+        const expanded = nav.classList.contains('open');
+        burger.setAttribute('aria-expanded', expanded);
+        // Optional: close menu if clicking a link
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', false);
+          });
+        });
+      });
+    }
+  </script>
 </body>
 </html>
