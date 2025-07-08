@@ -17,6 +17,10 @@ body {
   background-attachment: fixed;
   color: #333;
   min-height: 100vh;
+  /* Add flex for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* HEADER & NAVIGATION */
@@ -144,6 +148,7 @@ section {
   margin: 0 auto;
   padding: 2em;
   box-sizing: border-box;
+  flex: 1 0 auto;
 }
 
 .spaced-section {
@@ -196,11 +201,12 @@ form button {
   to { opacity: 1; }
 }
 
-/* FOOTER */
+/* FOOTER (sticky to bottom) */
 footer {
   background: #000000;
   text-align: center;
   padding: 2em 0;
+  margin-top: auto;      /* <-- THIS is what sticks footer to bottom! */
 }
 .footer-logo {
   height: 80px;
@@ -261,7 +267,7 @@ footer {
     width: 40px;
     height: 40px;
     padding: 0;
-    box-shadow: none; /* No shadow */
+    box-shadow: none;
   }
 
   .main-nav {
@@ -290,19 +296,19 @@ footer {
   }
 
   header img {
-    height: 95px;  /* Bigger logo on mobile */
+    height: 95px;  /* Keep big logo on mobile */
     max-width: 90%;
-    margin: 0 auto 0.15em; /* Less space below logo */
+    margin: 0 auto 0.1em; /* LESS space below logo */
   }
 
   .sub-nav {
-    flex-direction: column;        /* Stack vertically */
-    gap: 0.5em;
-    margin: 0.2em 0 0.2em 0;      /* Tighten space */
+    flex-direction: column;
+    gap: 0.2em; /* Tighter gap! */
+    margin: 0.08em 0 0.08em 0;
     align-items: center;
   }
   .sub-nav a {
-    width: 96%;
+    width: 98%;
     margin: 0 auto;
     text-align: center;
     font-size: 1.12em;
@@ -312,9 +318,9 @@ footer {
 
   .button, button {
     font-size: 1em;
-    padding: 0.7em 1.3em;
-    margin-top: 0.08em;
-    margin-bottom: 0.1em;
+    padding: 0.5em 1.1em;
+    margin-top: 0.05em;
+    margin-bottom: 0.09em;
   }
 
   .footer-logo {
