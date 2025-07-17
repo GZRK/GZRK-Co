@@ -8,6 +8,18 @@
   --background: #F4EFEA;
 }
 
+/* Glassmorphism overrides */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --blur-start: 20px;
+  --blur-end: 5px;
+  --transition-duration: 0.8s;
+  --glass-radius: 16px;
+  --glass-spacing: 2rem;
+  --glass-max-width: 1200px;
+}
+
 /* Body and background */
 body {
   font-family: Helvetica, sans-serif;
@@ -16,8 +28,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #333;
-  min-height: 100vh;
-  /* Add flex for sticky footer */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -76,7 +86,7 @@ header {
 
 /* Logo sizing */
 header img {
-  height: 180px;   /* Desktop size */
+  height: 180px;
   margin-bottom: 0.5em;
   max-width: 100%;
   display: block;
@@ -89,7 +99,14 @@ h1 {
   font-size: 1.8em;
   font-family: 'Keep Calm', 'KeepCalm Medium', Arial, sans-serif;
   margin-top: 0.5em;
-  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--gzrk-gold-dark) 0%,
+    var(--gzrk-gold) 25%,
+    var(--gzrk-gold-light) 50%,
+    var(--gzrk-gold) 75%,
+    var(--gzrk-gold-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -119,7 +136,14 @@ h1 {
 
 /* Button styles */
 .button, button {
-  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--gzrk-gold-dark) 0%,
+    var(--gzrk-gold) 25%,
+    var(--gzrk-gold-light) 50%,
+    var(--gzrk-gold) 75%,
+    var(--gzrk-gold-dark) 100%
+  );
   color: #000;
   padding: 0.8em 4em;
   border: none;
@@ -136,7 +160,14 @@ h1 {
 
 /* Headings metallic */
 h2, h3, h4 {
-  background: linear-gradient(90deg, var(--gzrk-gold-dark) 0%, var(--gzrk-gold) 25%, var(--gzrk-gold-light) 50%, var(--gzrk-gold) 75%, var(--gzrk-gold-dark) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--gzrk-gold-dark) 0%,
+    var(--gzrk-gold) 25%,
+    var(--gzrk-gold-light) 50%,
+    var(--gzrk-gold) 75%,
+    var(--gzrk-gold-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +187,9 @@ section {
   margin-bottom: 0.5em;
 }
 
-section p, .services-section p, .feature p {
+section p,
+.services-section p,
+.feature p {
   margin-bottom: 1em;
   line-height: 1.6;
   color: #333;
@@ -203,10 +236,10 @@ form button {
 
 /* FOOTER (sticky to bottom) */
 footer {
-  background: #000000;
+  background: #000;
   text-align: center;
   padding: 2em 0;
-  margin-top: auto;      /* <-- THIS is what sticks footer to bottom! */
+  margin-top: auto;
 }
 .footer-logo {
   height: 80px;
@@ -228,7 +261,8 @@ footer {
 .footer-icon:hover {
   transform: scale(1.2);
 }
-.footer-icon[data-tooltip]:hover::after, .footer-icon[data-tooltip]:focus::after {
+.footer-icon[data-tooltip]:hover::after,
+.footer-icon[data-tooltip]:focus::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: -1.7em;
@@ -249,7 +283,7 @@ footer {
 /* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   header {
-    padding: 0.6em 0 0.8em 0; /* Make header more compact */
+    padding: 0.6em 0 0.8em 0;
   }
 
   .hamburger {
@@ -296,14 +330,14 @@ footer {
   }
 
   header img {
-    height: 95px;  /* Keep big logo on mobile */
+    height: 95px;
     max-width: 90%;
-    margin: 0 auto 0.1em; /* LESS space below logo */
+    margin: 0 auto 0.1em;
   }
 
   .sub-nav {
     flex-direction: column;
-    gap: 0.2em; /* Tighter gap! */
+    gap: 0.2em;
     margin: 0.08em 0 0.08em 0;
     align-items: center;
   }
@@ -333,4 +367,63 @@ footer {
     padding: 1.5em 0;
     font-size: 14px;
   }
+}
+
+/* Glassmorphism sections (About / Mission) */
+.glass-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--glass-max-width);
+  margin: 4rem auto;
+  padding: var(--glass-spacing);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  backdrop-filter: blur(var(--blur-start));
+  -webkit-backdrop-filter: blur(var(--blur-start));
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    backdrop-filter var(--transition-duration) ease-out,
+    opacity var(--transition-duration) ease-out,
+    transform var(--transition-duration) ease-out;
+}
+
+.glass-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.glass-content {
+  flex: 1 1 45%;
+  padding-right: var(--glass-spacing);
+}
+.glass-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+.glass-content p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.glass-image {
+  flex: 1 1 45%;
+}
+.glass-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--glass-radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.glass-image img:hover {
+  transform: translateY(-6px);
+}
+
+.glass-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  backdrop-filter: blur(var(--blur-end));
+  -webkit-backdrop-filter: blur(var(--blur-end));
 }
