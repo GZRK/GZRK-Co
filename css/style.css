@@ -275,13 +275,13 @@ footer {
 }
 
 /* ===================================================================
-   ↕ Responsive Images & Floats
+   ↕ Responsive Images & Float Helpers
    =================================================================== */
 img {
   max-width: 100%;
   height: auto;
-  display: block;      /* remove inline‐gap under images */
-  margin: 0.5em auto;  /* vertical breathing room */
+  display: block;      
+  margin: 0.5em auto;  
 }
 img.float-left {
   float: left;
@@ -291,8 +291,7 @@ img.float-right {
   float: right;
   margin: 0 0 1em 1em;
 }
-
-/* Clearfix helper for any container wrapping floated items */
+/* Clearfix helper */
 .clearfix::after {
   content: "";
   display: table;
@@ -401,24 +400,17 @@ img.float-right {
     transform var(--transition-duration) ease-out;
   gap: var(--glass-spacing);
 }
-
-/* Reverse layout for “Our Mission” */
 .glass-section.reverse {
   flex-direction: row-reverse;
 }
-
-/* Text container */
 .glass-content {
   flex: 1 1 45%;
   padding-right: var(--glass-spacing);
 }
-
-/* For reversed section, pad on the left instead */
 .glass-section.reverse .glass-content {
   padding-right: 0;
   padding-left: var(--glass-spacing);
 }
-
 .glass-content h2 {
   font-size: 2.25rem;
   margin-bottom: 1rem;
@@ -427,8 +419,6 @@ img.float-right {
   line-height: 1.6;
   font-size: 1.1rem;
 }
-
-/* Image container */
 .glass-image {
   flex: 1 1 45%;
 }
@@ -442,11 +432,18 @@ img.float-right {
 .glass-image img:hover {
   transform: translateY(-6px);
 }
-
-/* When section is scrolled into view */
 .glass-section.in-view {
   opacity: 1;
   transform: translateY(0);
   backdrop-filter: blur(var(--blur-end));
   -webkit-backdrop-filter: blur(var(--blur-end));
+}
+
+/* ===================================================================
+   ↕ Remove all images on small screens
+   =================================================================== */
+@media (max-width: 600px) {
+  img {
+    display: none !important;
+  }
 }
